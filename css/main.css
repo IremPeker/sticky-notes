@@ -22,31 +22,10 @@ body {
 #input,
 #text,
 textarea {
-  /* float: left; */
   padding: 25px 25px 40px;
   margin: 0 20px 20px 0;
   width: 250px;
   height: 250px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
-}
-
-#create {
-  user-select: none;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  border: 15px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.1);
-  font: 220px "Helvetica", sans-serif;
-  line-height: 185px;
-}
-
-#create:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
 }
 
 textarea {
@@ -56,41 +35,38 @@ textarea {
   border-radius: 3px;
   background: linear-gradient(#f9efaf, #f7e98d);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* overflow: hidden; */
   transition: box-shadow 0.5s ease;
   font-smoothing: subpixel-antialiased;
   max-width: 520px;
   max-height: 250px;
 }
 
-textarea:hover {
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
-}
-textarea:focus {
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-  outline: none;
-}
-/* delete input */
-.deleteInput {
-  position: absolute;
-  left: 65px;
-  font-size: 1.5em;
-}
-
 /* save input */
 .saveInput {
   position: absolute;
   left: 285px;
-  font-size: 1.5em;
+  font-size: 25px;
+  cursor: pointer;
+  color: green;
 }
 
+.saveInput:active {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
+}
 /* close symbol */
 .close {
   position: relative;
   left: -225px;
   top: 5px;
-  font-size: 1.5em;
-  color: black;
+  font-size: 25px;
+  color: red;
+  cursor: pointer;
+}
+
+.close:active {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 /* save symbol */
@@ -98,8 +74,14 @@ textarea:focus {
   position: relative;
   right: 65px;
   top: 5px;
-  font-size: 1.5em;
-  color: black;
+  font-size: 25px;
+  color: green;
+  cursor: pointer;
+}
+
+.save:active {
+  border-color: rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 /* dynamic div */
