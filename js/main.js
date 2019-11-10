@@ -98,6 +98,15 @@ $(document).ready(function() {
     localStorage.setItem("todo", JSON.stringify(toDo));
     console.log(`toDo array after update=>`, toDo);
   });
+
+  // how-to use explanation onclick
+
+  $(".flip-input").on("click", ".how-to", function() {
+    console.log(`how to onclick....`);
+
+    $(".flip-input").toggleClass("flipped");
+  });
+
   // this is to generate unique id's for close spans
   textIdGen = () => {
     for (let i = 0; i <= localStorage.length; i++) {

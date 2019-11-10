@@ -17,10 +17,76 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  color: darkred;
 }
 
-#input,
-#text,
+/* flip input div */
+.flip-input {
+  margin: 7px;
+  width: 280px;
+  height: 240px;
+  text-align: center;
+  transition: transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.flip-input div {
+  display: block;
+  width: 280px;
+  height: 240px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* how-to symbol */
+.how-to {
+  position: absolute;
+  top: 215px;
+  left: 235px;
+  font-size: 20px;
+  cursor: pointer;
+  color: darkgreen;
+}
+
+.flip-input.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.flip-input .input-back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.back-text {
+  font-size: 15px;
+  color: darkred;
+}
+
+/* dynamic div */
+.createNewDiv {
+  width: 280px;
+  height: 240px;
+  margin-top: -25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
 textarea {
   padding: 25px 25px 40px;
   margin: 0 20px 20px 0;
@@ -28,7 +94,8 @@ textarea {
   height: 250px;
 }
 
-textarea {
+textarea,
+.input-back {
   font: 20px "Gloria Hallelujah", cursive;
   line-height: 1.5;
   border: 0;
@@ -44,13 +111,14 @@ textarea {
 /* save input */
 .saveInput {
   position: absolute;
-  left: 285px;
+  left: 227px;
   font-size: 25px;
   cursor: pointer;
   color: green;
 }
 
-.saveInput:active {
+.saveInput:active,
+.how-to:active {
   border-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.2);
 }
@@ -82,14 +150,4 @@ textarea {
 .save:active {
   border-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.2);
-}
-
-/* dynamic div */
-.createNewDiv {
-  width: 280px;
-  height: 240px;
-  margin-top: -25px;
-  margin: 10px;
-  display: flex;
-  flex-direction: row;
 }
