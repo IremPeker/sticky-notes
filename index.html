@@ -5,35 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>Local Storage</title>
+    <title>Sticky Notes</title>
   </head>
   <body>
-    <div id="notes">
-      <div class="flip-input">
+    <div id="notes-wrapper">
+      <div class="todo-generator">
         <div class="input">
           <textarea
             name="text"
-            id="text"
+            id="text-area"
+            placeholder="Write a to do!"
             cols="30"
             rows="10"
             wrap="hard"
           ></textarea>
-
-          <span class="saveInput">✔</span>
-          <span class="how-to">?</span>
+          <button class="input-save">✔</button>
+          <button class="how-to">?</button>
         </div>
         <div class="input-back">
-          <p class="back-text">
-            Write something<br />Click ✔ to save<br />
-            Once saved, a new sticky note will be added on the screen<br />
-            Update a specific note and click ✔ to save<br />
-            Delete specific note by clicking on ✖<br />
-            Simple as that :)
+          <p class="explanation">
+            Click ✔ to save <br>
+            Update: change the text and click ✔ to save  <br>
+            Delete: click ✖  <br>
+            Simple :)
           </p>
-          <span class="how-to">➜</span>
+          <button class="how-to">➜</button>
         </div>
       </div>
-    </div>
+  </div>
 
     <script src="./lib/jquery.js"></script>
     <script src="js/main.js"></script>

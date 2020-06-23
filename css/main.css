@@ -7,24 +7,24 @@
 html,
 body {
   background: url(http://subtlepatterns.com/patterns/little_pluses.png) #cacaca;
-  margin: 30px;
   width: 100%;
-  height: 100%;
-}
-#notes {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  color: darkred;
+  height: auto;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
-/* flip input div */
-.flip-input {
-  margin: 7px;
+#notes-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.todo-generator {
   width: 280px;
   height: 240px;
+  margin-bottom: 30px;
   text-align: center;
   transition: transform 0.6s;
   -webkit-transform-style: preserve-3d;
@@ -34,7 +34,7 @@ body {
   -webkit-transform-origin: 50% 50%;
 }
 
-.flip-input div {
+.todo-generator div {
   display: block;
   width: 280px;
   height: 240px;
@@ -48,55 +48,66 @@ body {
   backface-visibility: hidden;
 }
 
-/* how-to symbol */
+/* how-to button */
 .how-to {
   position: absolute;
   top: 215px;
-  left: 235px;
+  left: 255px;
   font-size: 20px;
   cursor: pointer;
   color: darkgreen;
 }
 
-.flip-input.flipped {
+.todo-generator.flipped {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.flip-input .input-back {
+.todo-generator .input-back {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
-.back-text {
+.explanation {
   font-size: 15px;
   color: darkred;
+  margin-top: 50px;
 }
 
 /* dynamic div */
-.createNewDiv {
+.newItem {
+  position: relative;
   width: 280px;
   height: 240px;
-  margin-top: -25px;
-  margin: 10px;
   display: flex;
   flex-direction: row;
+  margin-bottom: 30px;
 }
 
-textarea {
-  padding: 25px 25px 40px;
+#text-area,
+.new-text-area {
+  padding: 35px 30px;
   margin: 0 20px 20px 0;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
+}
+
+.new-text-area {
+  position: absolute;
+  resize: none;
+  outline: none;
+  width: 100%;
+  border: none;
+  height: 100%;
 }
 
 textarea,
 .input-back {
-  font: 20px "Gloria Hallelujah", cursive;
+  font: 15px "Gloria Hallelujah", cursive;
   line-height: 1.5;
   border: 0;
   border-radius: 3px;
@@ -109,45 +120,61 @@ textarea,
 }
 
 /* save input */
-.saveInput {
+.input-save {
   position: absolute;
-  left: 227px;
+  top: 0;
+  right: 0;
   font-size: 25px;
   cursor: pointer;
   color: green;
 }
 
-.saveInput:active,
-.how-to:active {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
-}
-/* close symbol */
-.close {
+/* close button */
+.close-button {
   position: relative;
-  left: -225px;
-  top: 5px;
-  font-size: 25px;
   color: red;
-  cursor: pointer;
 }
 
-.close:active {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
-}
-
-/* save symbol */
-.save {
-  position: relative;
-  right: 65px;
-  top: 5px;
-  font-size: 25px;
+/* save button */
+.save-button {
+  position: absolute;
+  bottom: 0;
+  right: 18px;
   color: green;
+}
+
+.close-button,
+.save-button {
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
   cursor: pointer;
 }
 
-.save:active {
-  border-color: rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
+.input-save,
+.how-to,
+.close-button,
+.save-button {
+  background-color: transparent;
+  border: none;
+}
+
+.input-save:active,
+.how-to:active,
+.close-button:active,
+.save-button:active {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 5px;
+  transform: translateY(4px);
+}
+
+.date-time {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  font-size: 10px;
+  border: 1px solid;
+  background-color: deeppink;
+  border-radius: 10px;
 }
